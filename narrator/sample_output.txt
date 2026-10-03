@@ -1,0 +1,11 @@
+Situation
+Mamaearth's Growth Analytics team processed 180 raw order lines through a relational store and a cleaned pandas pipeline. Gross revenue on the raw extract is ₹99,860.20. After removing five double-submit duplicates, cleaned total revenue is ₹97,358.30 (reconciliation delta ₹2,501.90).
+
+Complication
+Returns are not uniform. COD posts a return rate of 44.4%, versus CARD at 14.7% and UPI at 18.9%. The risk concentrates further: the COD + Tier-2 segment reaches 54.5% return rate — the single highest-risk slice. January appeared to lead monthly revenue at ₹29,582.10, but that was an artifact of two bulk quantity outliers; the true peak month is March at ₹20,318.90.
+
+Resolution
+1. Restrict or partially prepay COD in Tier-2 cities where the 54.5% return rate is concentrated.
+2. Block double-submit at checkout (customer + product + date) to eliminate the ₹2,501.90 reconciliation gap.
+3. Investigate the two quantity outliers (25 and 30 units) before trusting January trend reads.
+4. Protect March inventory and marketing around the verified ₹20,318.90 peak.
